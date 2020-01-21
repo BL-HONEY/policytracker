@@ -15,11 +15,6 @@ function cpuAverage() {
 
     let idleMs = 0;
     let totalMs = 0;
-    var cron = require('node-cron');
-
-    cron.schedule('* * * * *', () => {
-        console.log('running a task every minute');
-    });
     cpus.forEach((aCore) => {
         for (type in aCore.times) {
             totalMs += aCore.times[type];
